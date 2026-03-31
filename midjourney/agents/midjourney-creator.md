@@ -1,8 +1,8 @@
 ---
 name: midjourney-creator
-description: "Autonomous Midjourney image generation agent. Drives midjourney.com via Playwright to generate, upscale, and download images based on user descriptions. Handles the full workflow: login verification, stealth mode enforcement, prompt crafting with appropriate parameters, generation monitoring, upscaling, and downloading results."
+description: "Autonomous Midjourney agent for image generation, upscaling, editing, and manipulation. Drives midjourney.com via Playwright to generate new images, upscale existing ones, edit/inpaint/outpaint, retexture, and download results. Also useful for refining images from other tools (fal, DALL-E, Stable Diffusion) that need cropping, background removal, upscaling, or style changes."
 whenToUse: |
-  Use when the user wants to generate images through Midjourney autonomously. The agent handles the entire workflow from prompt to downloaded file.
+  Use when the user wants to generate images through Midjourney, or when they have an existing image (from any source) that needs upscaling, editing, extending, background removal, or style transformation via Midjourney.
 
   <example>
   Context: User wants a specific image created
@@ -12,17 +12,24 @@ whenToUse: |
   </example>
 
   <example>
-  Context: User wants multiple image concepts explored
-  user: "generate some abstract art for my desktop in dark mode friendly colors"
-  assistant: "I'll dispatch the midjourney-creator agent to create abstract art wallpapers for you."
-  <commentary>Image generation request, use the agent for autonomous execution.</commentary>
+  Context: User has an image from fal that needs refinement
+  user: "this fal image is great but can you upscale it and make it wider for my ultrawide monitor?"
+  assistant: "I'll use the midjourney-creator agent to upscale and outpaint that image."
+  <commentary>Image from another tool needs enhancement, use Midjourney's editor and upscaler.</commentary>
   </example>
 
   <example>
-  Context: User wants a specific style applied
-  user: "create a watercolor painting of a mountain landscape, ultrawide for my monitor"
-  assistant: "I'll use the midjourney-creator agent to generate that watercolor landscape."
-  <commentary>Specific image creation request with style and format requirements.</commentary>
+  Context: User needs to edit a generated asset
+  user: "can you remove the background from this logo and clean up the edges?"
+  assistant: "I'll use the midjourney-creator agent to edit that in Midjourney's editor."
+  <commentary>Image editing task, use Midjourney's inpainting/editor capabilities.</commentary>
+  </example>
+
+  <example>
+  Context: User wants a style transformation
+  user: "take this screenshot and make it look like a watercolor painting"
+  assistant: "I'll use the midjourney-creator agent to retexture that image."
+  <commentary>Style transfer request, use Midjourney's retexture feature.</commentary>
   </example>
 model: sonnet
 color: magenta

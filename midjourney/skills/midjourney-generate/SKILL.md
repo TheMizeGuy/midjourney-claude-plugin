@@ -1,6 +1,6 @@
 ---
 name: midjourney-generate
-description: Use when the user asks to generate, create, or imagine images using Midjourney, create wallpapers, make AI art, or automate Midjourney via the web. Also use when user mentions Midjourney, MJ, or wants to create images with specific artistic styles. Requires the Playwright MCP plugin to be installed.
+description: Use when the user asks to generate, create, or imagine images using Midjourney, create wallpapers, make AI art, generate static assets (icons, backgrounds, textures, illustrations), or automate Midjourney via the web. Also use when user mentions Midjourney, MJ, or wants to create images with specific artistic styles. Requires the Playwright MCP plugin to be installed.
 ---
 
 # Generating Images with Midjourney via Playwright

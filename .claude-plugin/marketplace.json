@@ -1,0 +1,18 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "midjourney-claude-plugin",
+  "description": "Claude Code plugin for Midjourney image generation, editing, and manipulation via Playwright browser automation.",
+  "owner": {
+    "name": "TheMizeGuy"
+  },
+  "plugins": [
+    {
+      "name": "midjourney",
+      "description": "Drive Midjourney image generation, upscaling, and editing via Playwright browser automation using your existing subscription.",
+      "source": "./midjourney",
+      "version": "1.0.0",
+      "category": "creative",
+      "homepage": "https://github.com/TheMizeGuy/midjourney-claude-plugin"
+    }
+  ]
+}
