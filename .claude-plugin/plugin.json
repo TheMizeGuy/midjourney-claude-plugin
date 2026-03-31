@@ -1,0 +1,9 @@
+{
+  "name": "midjourney",
+  "version": "1.0.0",
+  "description": "Drive Midjourney image generation via Playwright browser automation, using your existing subscription",
+  "author": {
+    "name": "MizeGuy"
+  },
+  "keywords": ["midjourney", "image-generation", "ai-art", "playwright", "wallpaper"]
+}
