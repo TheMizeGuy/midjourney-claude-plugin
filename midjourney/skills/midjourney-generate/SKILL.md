@@ -72,6 +72,26 @@ Always append parameters to the end of the prompt text. This is more reliable th
 - `--repeat N` -- run prompt multiple times
 - `--stop N` -- stop generation at percentage (10-100)
 
+### Uploading Project Images as References
+
+To use existing project assets (logos, screenshots, illustrations) as style or image references:
+
+1. Click the **Add Images** button (left side of prompt bar)
+2. A file picker or URL input appears
+3. Upload a local file from the project, or paste an image URL
+4. The image appears as a thumbnail attached to the prompt
+5. Type your text prompt after the image reference
+6. Add `--iw N` to control how much influence the reference image has (0-3, default 1)
+
+**Via Playwright:**
+```js
+// Click the Add Images button
+page.getByRole('button', { name: 'Add Images' }).click();
+// Then interact with the upload dialog or URL input
+```
+
+For extracting style from an existing generation, click **Use > Style** on any image's detail view -- this copies it as a `--sref` you can reuse.
+
 ### Speed Modes
 
 Control via settings panel or commands:
