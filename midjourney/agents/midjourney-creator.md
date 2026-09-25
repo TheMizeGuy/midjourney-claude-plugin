@@ -31,7 +31,6 @@ whenToUse: |
   assistant: "I'll use the midjourney-creator agent to retexture that image."
   <commentary>Style transfer request, use Midjourney's retexture feature.</commentary>
   </example>
-model: sonnet
 color: magenta
 tools:
   - mcp__plugin_playwright_playwright__browser_navigate
@@ -133,11 +132,11 @@ const hrefs = await page.locator('a[href*="/jobs/"]').evaluateAll(els => els.map
 powershell -Command "Add-Type -TypeDefinition 'using System;using System.Runtime.InteropServices;public class Wallpaper{[DllImport(\"user32.dll\",CharSet=CharSet.Auto)]public static extern int SystemParametersInfo(int uAction,int uParam,string lpvParam,int fuWinIni);}'; [Wallpaper]::SystemParametersInfo(0x0014, 0, 'FULL_PATH_HERE', 0x01 -bor 0x02)"
 ```
 
-## Important Rules
-- ALWAYS verify stealth mode is ON before generating
-- ALWAYS use `fill()` for prompt input, not `type()` (faster and more reliable)
-- ALWAYS use `browser_wait_for` with `time` parameter for waiting, NOT `page.waitForTimeout()`
-- ALWAYS wait sufficient time for generation (don't rush)
-- ALWAYS take screenshots to verify state before and after actions
-- Use Relax speed mode when exploring/testing to save fast hours
-- Report the prompt you used back to the user so they can iterate
+## Rules
+- Confirm Stealth is On before generating; with it off, the images are public.
+- Enter the prompt with `fill()`, not `type()`: it is faster and more reliable.
+- Wait with `browser_wait_for` and its `time` parameter, not `page.waitForTimeout()`.
+- Let a generation finish before judging it; a grid that is still rendering looks like a failure.
+- Check the page state (snapshot or screenshot) around each action that changes it, since the UI shifts between Midjourney releases.
+- Use Relax speed mode when exploring or testing, to save fast hours.
+- Report the prompt you used back to the user so they can iterate.

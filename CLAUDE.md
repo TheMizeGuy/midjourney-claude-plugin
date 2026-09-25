@@ -5,7 +5,7 @@ Standalone Claude Code plugin marketplace repo (single plugin: `midjourney`) tha
 ## Structure
 
 - `.claude-plugin/marketplace.json` — its OWN self-contained marketplace (not part of any umbrella marketplace; users add this repo directly or point `--plugin-dir` at `midjourney/`).
-- `midjourney/agents/midjourney-creator.md` — the driving agent. Frontmatter pins `model: sonnet` — retained deliberately as executor-tier browser-driving work (mechanical Playwright operation, not judgment). If output quality ever disappoints, remove the pin so it inherits the session model; never pin a dated ID.
+- `midjourney/agents/midjourney-creator.md` — the driving agent. Its frontmatter sets no `model:` or `effort:`, so it runs on whatever model the dispatching session chooses; do not add a pin.
 - `midjourney/skills/` — four skills: `midjourney-generate` (login → settings → prompt → wait → download), `midjourney-edit`, `midjourney-reference` (full parameter tables), `midjourney-consistency` (--sref/--oref/--seed techniques).
 
 ## Working on this repo
